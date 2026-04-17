@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PCOS Predictor</title>
+</head>
+
+<body style="font-family: Arial; text-align:center; margin-top:50px;">
+
+<h2>PCOS Risk Predictor</h2>
+
+<form action="/predict" method="post">
+    <input type="number" name="age" placeholder="Age" required><br><br>
+    <input type="number" name="weight" placeholder="Weight (kg)" required><br><br>
+    <input type="number" name="cycle" placeholder="Cycle Length (days)" required><br><br>
+
+    <label>Acne:</label>
+    <select name="acne">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+    </select><br><br>
+
+    <label>Hair Growth:</label>
+    <select name="hair">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+    </select><br><br>
+
+    <button onclick="showLoading()">Predict</button>
+
+<script>
+function showLoading(){
+    alert("Analyzing your health data...");
+}
+</script>
+</form>
+
+</body>
+</html>

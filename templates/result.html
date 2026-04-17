@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+</head>
+
+<body style="font-family: Arial; text-align:center; margin-top:50px; background:linear-gradient(135deg,#667eea,#764ba2); color:white;">
+
+<h2>Prediction Result</h2>
+
+<!-- Risk Result -->
+<h3 style="color: {{ color }}; background:white; display:inline-block; padding:10px 20px; border-radius:10px;">
+    {{ result }}
+</h3>
+
+<br><br>
+
+<!-- Condition with Emoji -->
+<h3>
+{{ condition }}
+{% if condition == "PCOS" %} ⚠️ {% endif %}
+{% if condition == "PCOD" %} ⚡ {% endif %}
+{% if condition == "Normal" %} ✅ {% endif %}
+</h3>
+
+<!-- Risk Score -->
+<p><b>Risk Score:</b> {{ risk }}%</p>
+
+<!-- Progress Bar -->
+<div style="width:300px; background:#ddd; margin:auto; border-radius:20px;">
+  <div style="width:{{ risk }}%; background:{{ color }}; padding:10px; border-radius:20px;">
+  </div>
+</div>
+
+<br>
+
+<!-- Tips -->
+<p style="background:white; color:black; padding:10px; border-radius:10px; display:inline-block;">
+    {{ tip }}
+</p>
+
+<br><br>
+
+<!-- 📄 Health Report -->
+<div style="background:white; color:black; padding:15px; border-radius:10px; display:inline-block; text-align:left;">
+    <h4>Health Report</h4>
+    <pre>{{ report }}</pre>
+</div>
+
+<br><br>
+
+<!-- Back Button -->
+<a href="/" style="color:white; border:1px solid white; padding:10px 15px; border-radius:10px; text-decoration:none;">
+    Go Back
+</a>
+
+</body>
+</html>
